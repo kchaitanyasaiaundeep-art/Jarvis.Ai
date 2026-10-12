@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>J.A.R.V.I.S. Aura UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Main Chat UI -->
+    <header>
+        <button class="header-btn">☰</button>
+        <div class="model-selector">
+            <span>JARVIS 3.5</span>
+            <span class="beta-tag">BETA</span>
+        </div>
+        <button class="header-btn">⋮</button>
+    </header>
+
+    <div class="chat-container" id="chatContainer">
+        <div class="message-bubble jarvis-message">
+            <div class="ai-icon"></div>
+            <div>Systems online, Boss. How can I assist you today?</div>
+        </div>
+    </div>
+
+    <div class="input-bar">
+        <div class="input-wrapper">
+            <input type="text" id="userInput" placeholder="Enter Message" onkeydown="handleKeyPress(event)">
+            <button class="add-file-btn">+</button>
+        </div>
+        <button class="voice-mode-trigger" onclick="openVoiceOverlay()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="22"></line>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Fullscreen Voice Mode Overlay -->
+    <div class="voice-overlay" id="voiceOverlay">
+        <div class="voice-header">
+            <button class="header-btn" onclick="closeVoiceOverlay()">←</button>
+            <div class="model-selector">
+                <span>JARVIS 3.5</span>
+                <span class="beta-tag">BETA</span>
+            </div>
+            <button class="header-btn">✏️</button>
+        </div>
+
+        <div class="orb-container">
+            <div class="aura-orb"></div>
+        </div>
+
+        <div>
+            <div class="voice-text-display" id="voiceOutputText">
+                "Tap the microphone below to talk with JARVIS."
+            </div>
+            <div class="voice-status" id="voiceStatusText" style="text-align: center;">Ready</div>
+        </div>
+
+        <button class="mic-button-large" onclick="toggleSpeechRecognition()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="22"></line>
+            </svg>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+          </html>
+  
